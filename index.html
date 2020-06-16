@@ -28,11 +28,19 @@
                 var marker = new google.maps.Marker({
                     position: mapsMouseEvent.latLng,
                     map: map,
-                    title: 'Hello World!'
+                    title: 'Hello World!',
+                    draggable: true,
+                    animation: google.maps.Animation.DROP
                 });
+                marker.addListener('click', markerClicked);
             });
 
         }
+
+        function markerClicked(evt) {
+            this.setMap(null)
+        }
+
     </script>
 </body>
 
