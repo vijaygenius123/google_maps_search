@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search Location</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARnfZhsWdOL1wQ6y3bVReIl2pshHnb2Wc&callback=initMap">
+        </script>
+
+    <script>
+        function initMap() {
+            var myLatlng = { lat: 0, lng: 0 };
+
+            var map = new google.maps.Map(
+                document.getElementById('map'), { zoom: 3, center: myLatlng });
+
+        }
+    </script>
+</body>
+
+</html>
