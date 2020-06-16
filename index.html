@@ -18,10 +18,19 @@
 
     <script>
         function initMap() {
-            var myLatlng = { lat: 0, lng: 0 };
+
+            var myLatlng = { lat: 22.350075806124863, lng: 79.453125 };
 
             var map = new google.maps.Map(
-                document.getElementById('map'), { zoom: 3, center: myLatlng });
+                document.getElementById('map'), { zoom: 5, center: myLatlng });
+
+            map.addListener('click', function (mapsMouseEvent) {
+                var marker = new google.maps.Marker({
+                    position: mapsMouseEvent.latLng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+            });
 
         }
     </script>
